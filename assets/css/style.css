@@ -125,3 +125,21 @@ h1, h2, h3, h4, h5, h6 {
 .widget_part .bwa_widget_box {
 	width: 48%;
 }
+
+.tricker_news {
+	padding: 1rem 1.2rem;
+	text-align: center;
+}
+
+.tricker_news span {
+	margin: 0 .5rem;
+	color: var(--e-global-color-light-green);
+}
+
+.tricker_news_footer span:nth-child(even) {
+	color: var(--e-global-color-orange);
+}
+
+.tricker_news_footer {
+
+}
