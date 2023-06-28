@@ -51,7 +51,10 @@ body {
 	font-weight: 400;
 	color: var(--e-global-color-white);
 	font-family:var(--body-font-family);
-	background: var(--e-global-color-black);
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	
 }
 
 .section {
@@ -72,34 +75,36 @@ h1, h2, h3, h4, h5, h6 {
 .bwa_main_sec {
 	width: 100%;
 	height: 100%;
-	padding: 2rem;
+	padding: 26px;
 }
 
 .bwa_main_box {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	column-gap: 27px;
+	row-gap: 4px;
 }
 
 .bwa_box_wrap {
-	width: 30%;
-	padding: 0 1.2rem;
-	margin-bottom: 1rem;
+	/* height: 283px; */
 }
 
-.bwa_box_wrap:nth-child(3n + 2) {
+/* .bwa_box_wrap:nth-child(3n + 2) {
 	width: 40%;
-}
+} */
 
 .bwa_box_inside {
 	width: 100%;
 }
 
 .bwa_box_inside h3 {
-	font-size: 3rem;
+	font-size: 32px;
 	font-weight: 700;
-	margin-bottom: 1rem;
 	color: var(--e-global-color-orange);
+	padding: 4px;
+	z-index: 3;
+	position: relative;
 }
 
 .bwa_box_wrap:nth-child(3n + 2) .bwa_box_inside h3 {
@@ -108,11 +113,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .bwa_widget_box {
 	width: 100%;
-	height: 22rem;
+	height: 238px;
 	font-size: 1.6rem;
 	line-height: 160%;
-	border-radius: 1rem;
-	border: solid .1rem var(--e-global-color-offwhite);
+	/* border-radius: 1rem; */
+	/* border: solid .1rem var(--e-global-color-offwhite); */
 	overflow: hidden;
 }
 
@@ -122,17 +127,20 @@ h1, h2, h3, h4, h5, h6 {
 	justify-content: space-between;
 }
 
-.widget_part .bwa_widget_box {
+/* .widget_part .bwa_widget_box {
 	width: 48%;
-}
+} */
 
 .tricker_news {
 	padding: 1rem 1.2rem;
 	text-align: center;
+	font-size: 18px;
+	z-index: 3;
+	position: relative;
 }
 
 .tricker_news span {
-	margin: 0 .5rem;
+	/* margin: 0 .5rem; */
 	color: var(--e-global-color-light-green);
 }
 
@@ -142,4 +150,38 @@ h1, h2, h3, h4, h5, h6 {
 
 .tricker_news_footer {
 
+}
+
+.bwa_box_inside_split {
+	column-gap: 22px;
+	display: flex;
+}
+
+.bwa_widget_box_split {
+	width: 348px;
+}
+
+.bwa_box_wrap_edge {
+	width: 548px;
+}
+
+.bwa_box_wrap_center {
+	width: 718px;
+}
+
+.bwa_widget_box_bottom {
+	height: 287px !important;
+}
+
+.background {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
+	background-image: url('../images/snarky-charts-bwa-001.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	top: 0;
+	left: 0;
 }
