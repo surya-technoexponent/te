@@ -348,16 +348,32 @@
 				"container_id": "tradingview_e2098"
 			}
 		);
-			const widgets = document.getElementsByClassName('widget');
-			let intervalStart = false
+		const widgets = document.getElementsByClassName('widget');
+		function getRandomArbitrary(min, max) {
+			return Math.ceil(Math.random() * (max - min) + min);
+		}
+		const flip = (element) => {
+			widget.classList.toggle("animate-flip")
+		}
+		const slideRight = (element) => {
+			widget.classList.toggle("animate-slide-right")
+		}
+		const slideLeft = (element) => {
+			widget.classList.toggle("animate-slide-left")
+		}
+		const fade = (element) => {
+			widget.classList.toggle("animate-fade")
+		}
+		const animations = [flip, slideRight, slideLeft, fade]
+		window.addEventListener('load', () => {
 			setInterval(() => {
-				
-				intervalStart = true
-				for (widget of widgets){
-					widget.classList.toggle("animate")
-				}
-				
-			}, 3000);
+			const randomIndex = getRandomArbitrary(0, 3)
+			console.log(randomIndex)
+			for (widget of widgets) {
+				animations[randomIndex](widget)
+			}
+		}, 3000);
+		})
 	</script>
 </body>
 

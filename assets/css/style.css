@@ -121,6 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 	/* border-radius: 1rem; */
 	/* border: solid .1rem var(--e-global-color-offwhite); */
 	overflow: hidden;
+	position: relative;
 }
 
 .widget_part .bwa_box_inside {
@@ -195,7 +196,7 @@ h1, h2, h3, h4, h5, h6 {
 	perspective: 100%;
 }
 
-.bwa_widget_box .animate {
+.bwa_widget_box .animate-flip {
 	transform: rotateY(0deg);
 	animation: rotateAnimation 1s ease-in-out;
 }
@@ -203,4 +204,61 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes rotateAnimation {
 	from {transform: rotateY(180deg);}
 	to {transform: rotateY(360deg);}
+}
+
+.bwa_widget_box .animate-slide-right {
+	position: absolute;
+	right: 0;
+	width: 100%;
+	animation: slideRightAnimation 1s ease-in-out;
+}
+
+@keyframes slideRightAnimation {
+	0% {
+		width: 100%;
+	}
+	50% {
+		width: 0%
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.bwa_widget_box .animate-slide-left {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	animation: slideLeftAnimation 1s ease-in-out;
+}
+
+@keyframes slideLeftAnimation {
+	0% {
+		width: 100%;
+	}
+	50% {
+		width: 0%
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.bwa_widget_box .animate-fade {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	animation: fadeAnimation 1s ease-in-out;
+}
+
+@keyframes fadeAnimation {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
