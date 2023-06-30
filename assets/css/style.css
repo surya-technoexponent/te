@@ -54,6 +54,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+	background-color: #000;
 	
 }
 
@@ -75,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 .bwa_main_sec {
 	width: 100%;
 	height: 100%;
-	padding: 26px;
+	padding: 26px 0px;
 }
 
 .bwa_main_box {
@@ -83,7 +84,8 @@ h1, h2, h3, h4, h5, h6 {
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 27px;
-	row-gap: 4px;
+	row-gap: 2.5px;
+	padding: 0px 26px;
 }
 
 .bwa_box_wrap {
@@ -132,19 +134,19 @@ h1, h2, h3, h4, h5, h6 {
 } */
 
 .tricker_news {
-	padding: 1rem 1.2rem;
+	padding: 0.92rem 1.2rem;
 	text-align: center;
-	font-size: 18px;
+	font-size: 20px;
 	z-index: 3;
 	position: relative;
 }
 
 .tricker_news span {
-	/* margin: 0 .5rem; */
+	margin: 0 .5rem;
 	color: var(--e-global-color-light-green);
 }
 
-.tricker_news_footer span:nth-child(even) {
+.tricker_news span:nth-child(even) {
 	color: var(--e-global-color-orange);
 }
 
@@ -185,4 +187,20 @@ h1, h2, h3, h4, h5, h6 {
 	top: 0;
 	left: 0;
 	pointer-events: none;
+}
+
+/* Animation */
+
+.bwa_widget_box {
+	perspective: 100%;
+}
+
+.bwa_widget_box .animate {
+	transform: rotateY(0deg);
+	animation: rotateAnimation 1s ease-in-out;
+}
+
+@keyframes rotateAnimation {
+	from {transform: rotateY(180deg);}
+	to {transform: rotateY(360deg);}
 }
