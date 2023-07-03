@@ -94,7 +94,7 @@
 						<marquee width="100%" direction="left">Indices :: DijA - $xx,xxx ::</marquee>
 					</h3>
 					<div class="bwa_widget_box bwa_widget_box_bottom dark_green_bg">
-						<marquee width="100%" direction="up" height="100%">
+						<marquee id="left-marquee" width="100%" direction="up" height="100%">
 							This is a sample scrolling text that has scrolls in the upper direction.
 							This is a sample scrolling text that has scrolls in the upper direction.
 							This is a sample scrolling text that has scrolls in the upper direction.
@@ -104,9 +104,14 @@
 			</div>
 			<div class="bwa_box_wrap widget_part bwa_box_wrap_center">
 				<div class="bwa_box_inside ">
-					<h3>
-						<marquee width="100%" direction="left">Indices :: DijA - $xx,xxx ::</marquee>
-					</h3>
+					<div class="bwa_box_inside_split">
+						<h3>
+							<marquee width="100%" direction="left">Indices :: DijA - $xx,xxx ::</marquee>
+						</h3>
+						<h3>
+							<marquee width="100%" direction="left">Indices :: DijA - $xx,xxx ::</marquee>
+						</h3>
+					</div>
 					<div class="bwa_box_inside_split">
 						<div class="bwa_widget_box bwa_widget_box_bottom bwa_widget_box_split">
 							<div style="height: 100%" class="widget" id="tradingview_e2097"></div>
@@ -131,6 +136,9 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="rumble-logo">
+			<img src="./assets/images/rumble.png" width="100%" height="100%" />
 		</div>
 		<div class="tricker_news tricker_news_footer">
 			<div class="tradingview-widget-container">
@@ -367,13 +375,155 @@
 		const animations = [flip, slideRight, slideLeft, fade]
 		window.addEventListener('load', () => {
 			setInterval(() => {
-			const randomIndex = getRandomArbitrary(0, 3)
-			console.log(randomIndex)
-			for (widget of widgets) {
-				animations[randomIndex](widget)
-			}
-		}, 3000);
+				const randomIndex = getRandomArbitrary(0, 3)
+				console.log(randomIndex)
+				for (widget of widgets) {
+					animations[randomIndex](widget)
+				}
+			}, 3000);
 		})
+
+		const leftMarquee = document.getElementById('left-marquee')
+
+		const getRssDataForLeftMarquee = async () => {
+			let leftMarqueeContent = ''
+			// await fetch("https://www.rt.com/rss/news/").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+			// 	const items = data.querySelectorAll("item");
+			// 	let html = ``;
+			// 	items.forEach(el => {
+			// 		html += `<p>${el.querySelector("title").innerHTML}</p>`
+			// 	})
+			// 	leftMarqueeContent += html
+			// })
+			// await fetch("https://www.infowars.com/rss.xml").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+			// 	const items = data.querySelectorAll("item");
+			// 	let html = ``;
+			// 	items.forEach(el => {
+			// 		html += `<p>${el.querySelector("title").innerHTML}</p>`
+			// 	})
+			// 	leftMarqueeContent += html
+			// })
+			// await fetch("https://www.naturalnews.com/rss.xml").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+			// 	const items = data.querySelectorAll("item");
+			// 	let html = ``;
+			// 	items.forEach(el => {
+			// 		html += `<p>${el.querySelector("title").innerHTML}</p>`
+			// 	})
+			// 	leftMarqueeContent += html
+			// })
+			// await fetch("https://www.coindesk.com/arc/outboundfeeds/rss/").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+			// 	const items = data.querySelectorAll("item");
+			// 	let html = ``;
+			// 	items.forEach(el => {
+			// 		html += `<p>${el.querySelector("title").innerHTML}</p>`
+			// 	})
+			// 	leftMarqueeContent += html
+			// })
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100727362").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15837362").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000108").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000115").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001054").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19836768").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			await fetch("https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20409666").then(res => res.text()).then(str => new window.DOMParser().parseFromString(str, "text/xml")).then(data => {
+				const items = data.querySelectorAll("item");
+				let html = ``;
+				items.forEach(el => {
+					html += `<p>${el.querySelector("title").innerHTML}</p>`
+				})
+				leftMarqueeContent += html
+			})
+			if (leftMarqueeContent) {
+				return leftMarqueeContent
+			} else {
+				throw "Can't get rss"
+			}
+		}
+		getRssDataForLeftMarquee().then(res => {
+			leftMarquee.innerHTML = res
+		}).catch(err => console.log(err))
 	</script>
 </body>
 
