@@ -188,11 +188,11 @@ const getRssDataForLeftMarquee = async () => {
 }
 window.addEventListener('load', () => {
     getRssDataForLeftMarquee().then(res => {
-        leftMarquee.innerHTML = `<marquee  width="100%" direction="up" height="100%" Scrollamount="4" onmouseover="this.stop();" onmouseout="this.start();">${res}</marquee>`
+        leftMarquee.innerHTML = `<marquee  width="100%" direction="up" height="100%" Scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">${res}</marquee>`
     }).catch(err => console.log(err))
     setInterval(() => {
         getRssDataForLeftMarquee().then(res => {
-			leftMarquee.innerHTML = `<marquee  width="100%" direction="up" height="100%" Scrollamount="4" onmouseover="this.stop();" onmouseout="this.start();">${res}</marquee>`
+			leftMarquee.innerHTML = `<marquee  width="100%" direction="up" height="100%" Scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">${res}</marquee>`
 		}).catch(err => console.log(err))
     }, rssRefetchInterval)
 })

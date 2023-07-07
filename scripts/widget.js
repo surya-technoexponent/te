@@ -9,17 +9,30 @@ const widget = {
 }
 const setKeys = Object.keys(widget[currentSchedule]);
 
-const currentSetIndex = setKeys.indexOf(currentSet)
 
 window.addEventListener("load", () => {
+  setTicker(currentSet)
+  setWidget(currentSet)
   setInterval(() => {
-    if(currentSetIndex <= (setKeys.length - 1)) {
+    const currentSetIndex = setKeys.indexOf(currentSet)
+    if(currentSetIndex === (setKeys.length - 1)) {
       currentSet = setKeys[0]
     } else {
       currentSet = setKeys[currentSetIndex  + 1]
     }
+    console.log(currentSet);
+    setTicker(currentSet)
+    setWidget(currentSet)
   }, setChangeInterval)
 })
+
+const getTickerPrice = async (ticker) => {
+  ticker = ticker.split(":")
+  ticker = ticker[1]
+   await fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=DIA&apikey=7QL0X0IQV6ZPANZB`).then(res => {
+    // console.log(currentSet, ticker, res);
+  })
+} 
 
 const widgetConfig = {
   "autosize": true,
@@ -37,75 +50,69 @@ const widgetConfig = {
     "backgroundColor": "rgba(0, 0, 0, 1)",
 }
 
+const setWidget = (currentSet) => {
+  new TradingView.widget(
+    {
+      ...widgetConfig,
+      "symbol": widget[currentSchedule][currentSet][0],
+      "container_id": "widget-area-01"
+    }
+  );
+  new TradingView.widget(
+    {
+      ...widgetConfig,
+      "symbol": widget[currentSchedule][currentSet][1],
+      "container_id": "widget-area-02"
+    }
+  );
+  new TradingView.widget(
+    {
+      ...widgetConfig,
+      "symbol": widget[currentSchedule][currentSet][2],
+      "container_id": "widget-area-03"
+    }
+  );
+  new TradingView.widget(
+    {
+      ...widgetConfig,
+      "symbol": widget[currentSchedule][currentSet][3],
+      "container_id": "widget-area-04"
+    }
+  );
+  new TradingView.widget(
+    {
+      ...widgetConfig,
+      "symbol": widget[currentSchedule][currentSet][4],
+      "container_id": "widget-area-05"
+    }
+  );
+  new TradingView.widget(
+    {
+      ...widgetConfig,
+      "symbol": widget[currentSchedule][currentSet][5],
+      "container_id": "widget-area-06"
+    }
+  );
+  new TradingView.widget(
+    {
+      ...widgetConfig,
+      "symbol": widget[currentSchedule][currentSet][6],
+      "container_id": "widget-area-07"
+    }
+  );
+  new TradingView.widget(
+    {
+      ...widgetConfig,
+      "symbol": widget[currentSchedule][currentSet][7],
+      "container_id": "widget-area-08"
+    }
+  );
+}
 
-new TradingView.widget(
-  {
-    ...widgetConfig,
-    "symbol": widget[currentSchedule][currentSet][0],
-    "container_id": "widget-area-01"
-  }
-);
-new TradingView.widget(
-  {
-    ...widgetConfig,
-    "symbol": widget[currentSchedule][currentSet][1],
-    "container_id": "widget-area-02"
-  }
-);
-new TradingView.widget(
-  {
-    ...widgetConfig,
-    "symbol": widget[currentSchedule][currentSet][2],
-    "container_id": "widget-area-03"
-  }
-);
-new TradingView.widget(
-  {
-    ...widgetConfig,
-    "symbol": widget[currentSchedule][currentSet][3],
-    "container_id": "widget-area-04"
-  }
-);
-new TradingView.widget(
-  {
-    ...widgetConfig,
-    "symbol": widget[currentSchedule][currentSet][4],
-    "container_id": "widget-area-05"
-  }
-);
-new TradingView.widget(
-  {
-    ...widgetConfig,
-    "symbol": widget[currentSchedule][currentSet][5],
-    "container_id": "widget-area-06"
-  }
-);
-new TradingView.widget(
-  {
-    ...widgetConfig,
-    "symbol": widget[currentSchedule][currentSet][6],
-    "container_id": "widget-area-07"
-  }
-);
-new TradingView.widget(
-  {
-    ...widgetConfig,
-    "symbol": widget[currentSchedule][currentSet][7],
-    "container_id": "widget-area-08"
-  }
-);
-
-const getTickerPrice = async (ticker) => {
-  ticker = ticker.split(":")
-  ticker = ticker[1]
-   await fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=7QL0X0IQV6ZPANZB`).then(res => {
-    console.log(ticker, res);
-  })
-} 
-
-widget[currentSchedule][currentSet].forEach((ticker, index) => {
-  const price = getTickerPrice(ticker)
-  document.getElementById(`ticker-area-0${index + 1}`).innerHTML = `${ticker} - `
-});
-
+const setTicker = (currentSet) => {
+  widget[currentSchedule][currentSet].forEach((ticker, index) => {
+    const price = getTickerPrice(ticker)
+    document.getElementById(`ticker-area-0${index + 1}`).innerHTML = `<marquee direction="left" width="100%" Scrollamount="4">${ticker} - </marquee>`
+  });
+}
 

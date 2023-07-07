@@ -1,5 +1,3 @@
-
-
 const animateElsOnSetChange = document.getElementsByClassName('animate-on-set-change')
 
 function getRandomArbitrary(min, max) {
