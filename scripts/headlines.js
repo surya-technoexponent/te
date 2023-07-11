@@ -1,3 +1,10 @@
+/* TODO:
+
+    * Update 1 feed every 90 seconds
+    * Consolidate feed articles into single chronologically ordered array
+    * Pop off oldest # of articles that matches number of new articles pushed onto array
+    * Limit # of articles per feed to 5
+*/
 const leftMarquee = document.getElementById('left-marquee')
 
 const rssRefetchInterval = 1000 * 60 * 15

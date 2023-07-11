@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 	flex-wrap: wrap;
 	column-gap: 27px;
 	row-gap: 1.3rem;
-	padding: 0px 26px;
+	padding: 8px 26px;
 }
 
 .bwa_box_wrap {
@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 24px;
 	font-weight: 700;
 	color: var(--e-global-color-orange);
-	padding: 6px;
+	padding: 0px 6px 8px 6px;
 	z-index: 3;
 	position: relative;
 }
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bwa_widget_box {
 	width: 100%;
-	height: 238px;
+	height: 240px;
 	font-size: 1.6rem;
 	line-height: 160%;
 	/* border-radius: 1rem; */
@@ -136,8 +136,8 @@ h1, h2, h3, h4, h5, h6 {
 	width: 48%;
 } */
 
-.tricker_news {
-	padding: 0.92rem 7rem;
+.ticker_news {
+	padding: 0.92rem 0rem;
 	text-align: center;
 	font-size: 32px;
 	z-index: 3;
@@ -145,16 +145,16 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Russo One', sans-serif;
 }
 
-.tricker_news span {
+.ticker_news span {
 	margin: 0 .5rem;
 	color: var(--e-global-color-light-green);
 }
 
-.tricker_news span:nth-child(even) {
+.ticker_news span:nth-child(even) {
 	color: var(--e-global-color-orange);
 }
 
-.tricker_news_footer {
+.ticker_news_footer {
 	position: fixed;
 	bottom: 0;
 	right: 0;
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bwa_widget_box_bottom {
-	height: 287px !important;
+	height: 295px !important;
 }
 
 .background {
@@ -215,20 +215,54 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-box {
 	position: fixed;
-	top: 1rem;
+	top: 0rem;
 	z-index: 5;
-	right: 2.6rem;
-	width: 75px;
+	right: 1.25rem;
+	width: 100px;
 }
 
 .spotify_bg {
 	background-color: #282828;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	padding: 1rem;
 }
 
 .bwa_widget_box {
 	perspective: 100%;
 }
 
+.bwa_control_center .btn-group {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.bwa_control_center .btn-group button {
+	background-color: transparent;
+	border: 1px solid #00faff;
+	padding: .4rem 1rem;
+	border-radius: .5rem;
+	color: #ffffff;
+}
+
+#left-marquee {
+	background: url(../images/rss-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+/* Animation */
+
+.bwa_widget_box {
+	perspective: 100%;
+}
+
+.bwa_widget_box .animate {
+	transform: rotateY(0deg);
+	animation: rotateAnimation 1s ease-in-out;
+}
+
+@keyframes rotateAnimation {
+	from {transform: rotateY(180deg);}
+	to {transform: rotateY(360deg);}
+}
