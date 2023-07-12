@@ -2,10 +2,7 @@ var config = {
     "animations": {
         "index": "0",
         "methods": [
-            "flip",
-            "slideRight",
-            "slideLeft",
-            "fade"
+            "rotate"
         ],
     },
     "banner": {
@@ -38,7 +35,7 @@ var config = {
     "charts": {
         "animationIndex": "0",
         "changeIntervalDescription": "Time in minutes between chart transitions",
-        "changeInterval": "1", // in minutes
+        "changeInterval": ".25", // in minutes
         "currentSet": "1",
         "currentLocation": "1",
         "currentSetKey": "0",
@@ -51,13 +48,13 @@ var config = {
             "locale": "en",
             "toolbar_bg": "#000",
             "allow_symbol_change": true,
-            "hide_legend": true,
+            "hide_legend": false,
             "hide_side_toolbar": true,
             "hide_top_toolbar": true,
             "range": "3M",
             "save_image": true,
             "show_popup_button": true,
-            "withdateranges": true,
+            "withdateranges": false,
             "backgroundColor": "rgba(0, 0, 0, 1)"
         },
         "nextLocation": "2",
@@ -65,228 +62,228 @@ var config = {
         "symbols": {
             "1": [
                 {
-                    "symbolAPI": "XRPUSD",
-                    "symbolTV": "CRYPTO:XRPUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "BTCUSD",
-                    "symbolTV": "CRYPTO:BTCUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "SOLUSD",
-                    "symbolTV": "CRYPTO:SOLUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "ADAUSD",
-                    "symbolTV": "CRYPTO:ADAUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "ETHUSD",
-                    "symbolTV": "CRYPTO:ETHUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "DOTUSD",
-                    "symbolTV": "CRYPTO:DOTUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "PEPEUSD",
-                    "symbolTV": "CRYPTO:PEPEUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "BIGUSDT",
-                    "symbolTV": "POLONIEX:BIGUSDT",
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "YFIUSD",
-                    "symbolTV": "CRYPTO:YFIUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "XMRUSD",
-                    "symbolTV": "CRYPTO:XMRUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "MKRUSD",
-                    "symbolTV": "CRYPTO:MKRUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "ALGOUSD",
-                    "symbolTV": "CRYPTO:ALGOUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "ARRRUSD",
-                    "symbolTV": "CRYPTO:ARRRUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "HBARUSD",
-                    "symbolTV": "CRYPTO:HBARUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "XLMUSD",
-                    "symbolTV": "CRYPTO:XLMUSD", 
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
-                    "symbolAPI": "RNDRUSD",
-                    "symbolTV": "CRYPTO:RNDRUSD",
-                    "interval": "15",
-                    "range": "5D",
-                    "timezone": "Etc/UTC"
-                },
-                {
                     "symbolAPI": "DXY",
                     "symbolTV": "CAPITALCOM:DXY", 
-                    "interval": "15",
-                    "range": "5D",
+                    "interval": "1D",
+                    "range": "50D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "DIJA",
                     "symbolTV": "BLACKBULL:US30", 
-                    "interval": "15",
-                    "range": "5D",
+                    "interval": "1D",
+                    "range": "50D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "GOLD",
                     "symbolTV": "CAPITALCOM:GOLD", 
-                    "interval": "15",
-                    "range": "5D",
+                    "interval": "1D",
+                    "range": "50D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "CL1",
                     "symbolTV": "NYMEX:CL1!", 
-                    "interval": "15",
-                    "range": "5D",
+                    "interval": "1D",
+                    "range": "50D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "NDX",
                     "symbolTV": "NASDAQ:NDX", 
-                    "interval": "15",
-                    "range": "5D",
+                    "interval": "1D",
+                    "range": "50D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "BTCUSD",
                     "symbolTV": "BITSTAMP:BTCUSD", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "Etc/UTC"
                 },
                 {
                     "symbolAPI": "SPY",
                     "symbolTV": "AMEX:SPY", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "IWM",
                     "symbolTV": "AMEX:IWM",
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "UUP",
                     "symbolTV": "AMEX:UUP", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "DIA",
                     "symbolTV": "AMEX:DIA", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "SILVER",
                     "symbolTV": "TVC:SILVER", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "NATGAS",
                     "symbolTV": "CAPITALCOM:NATURALGAS", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "QQQ",
                     "symbolTV": "NASDAQ:QQQ", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "ETHUSD",
                     "symbolTV": "BITSTAMP:ETHUSD", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "Etc/UTC"
                 },
                 {
                     "symbolAPI": "SPY",
                     "symbolTV": "AMEX:SPY", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "IWM",
                     "symbolTV": "AMEX:IWM",
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
+                },
+                {
+                    "symbolAPI": "XRPUSD",
+                    "symbolTV": "CRYPTO:XRPUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "BTCUSD",
+                    "symbolTV": "CRYPTO:BTCUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "SOLUSD",
+                    "symbolTV": "CRYPTO:SOLUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "ADAUSD",
+                    "symbolTV": "CRYPTO:ADAUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "ETHUSD",
+                    "symbolTV": "CRYPTO:ETHUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "DOTUSD",
+                    "symbolTV": "CRYPTO:DOTUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "PEPEUSD",
+                    "symbolTV": "CRYPTO:PEPEUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "BIGUSDT",
+                    "symbolTV": "POLONIEX:BIGUSDT",
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "YFIUSD",
+                    "symbolTV": "CRYPTO:YFIUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "XMRUSD",
+                    "symbolTV": "CRYPTO:XMRUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "MKRUSD",
+                    "symbolTV": "CRYPTO:MKRUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "ALGOUSD",
+                    "symbolTV": "CRYPTO:ALGOUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "ARRRUSD",
+                    "symbolTV": "CRYPTO:ARRRUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "HBARUSD",
+                    "symbolTV": "CRYPTO:HBARUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "XLMUSD",
+                    "symbolTV": "CRYPTO:XLMUSD", 
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
+                },
+                {
+                    "symbolAPI": "RNDRUSD",
+                    "symbolTV": "CRYPTO:RNDRUSD",
+                    "interval": "15",
+                    "range": "3D",
+                    "timezone": "Etc/UTC"
                 }
             ],
             "2": [
@@ -294,56 +291,56 @@ var config = {
                     "symbolAPI": "UUP",
                     "symbolTV": "AMEX:UUP", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "DIA",
                     "symbolTV": "AMEX:DIA", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "SILVER",
                     "symbolTV": "TVC:SILVER", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "NATGAS",
                     "symbolTV": "CAPITALCOM:NATURALGAS", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "QQQ",
                     "symbolTV": "NASDAQ:QQQ", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "ETHUSD",
                     "symbolTV": "BITSTAMP:ETHUSD", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "Etc/UTC"
                 },
                 {
                     "symbolAPI": "SPY",
                     "symbolTV": "AMEX:SPY", 
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 },
                 {
                     "symbolAPI": "IWM",
                     "symbolTV": "AMEX:IWM",
                     "interval": "15",
-                    "range": "5D",
+                    "range": "3D",
                     "timezone": "America/New_York"
                 }
             ]
@@ -460,5 +457,13 @@ var config = {
         "useRSS": true,
         "useRumble": false,
         "useSpotify": true
+    },
+    "widgetTransition": {
+        "transitions": [
+            "url(./assets/transitions/widget-1.gif)",
+            "url(./assets/transitions/widget-2.gif)",
+            "url(./assets/transitions/widget-3.gif)",
+        ],
+        "currrentIndex": 1
     }
 }

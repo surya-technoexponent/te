@@ -193,13 +193,31 @@ const getRssDataForLeftMarquee = async () => {
         throw "Can't get rss"
     }
 }
+
+const footer = document.getElementById("left-marquee-footer")
+
+const days = [
+    "Sunday",
+    "Monday",
+    "Teusday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+]
+
+const d = new Date();
+let day = d.getDay()
+
+footer.innerHTML = `<h4>${days[day]} :: ${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()} :: ${d.getHours()}:${d.getMinutes()}</h4>`
+
 window.addEventListener('load', () => {
     getRssDataForLeftMarquee().then(res => {
-        leftMarquee.innerHTML = `<marquee  width="100%" direction="up" height="100%" Scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">${res}</marquee>`
+        leftMarquee.innerHTML = `<marquee  width="100%" direction="up" height="100%" Scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">${res}</marquee> ${leftMarquee.innerHTML}`
     }).catch(err => console.log(err))
     setInterval(() => {
         getRssDataForLeftMarquee().then(res => {
-			leftMarquee.innerHTML = `<marquee  width="100%" direction="up" height="100%" Scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">${res}</marquee>`
+			leftMarquee.innerHTML = `<marquee  width="100%" direction="up" height="100%" Scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">${res}</marquee> ${leftMarquee.innerHTML}`
 		}).catch(err => console.log(err))
     }, rssRefetchInterval)
 })

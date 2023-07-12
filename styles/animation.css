@@ -1,6 +1,6 @@
 .animate-flip {
 	transform: rotateY(0deg);
-	animation: rotateAnimation 10s ease;
+	animation: rotateAnimation 3s ease;
 }
 
 @keyframes rotateAnimation {
@@ -12,14 +12,11 @@
 	position: absolute;
 	right: 0;
 	width: 100%;
-	animation: slideRightAnimation 10s ease;
+	animation: slideRightAnimation 3s ease-out;
 }
 
 @keyframes slideRightAnimation {
 	0% {
-		width: 100%;
-	}
-	50% {
 		width: 0%
 	}
 	100% {
@@ -31,14 +28,11 @@
 	position: absolute;
 	left: 0;
 	width: 100%;
-	animation: slideLeftAnimation 10s ease;
+	animation: slideLeftAnimation 3s ease-out;
 }
 
 @keyframes slideLeftAnimation {
 	0% {
-		width: 100%;
-	}
-	50% {
 		width: 0%
 	}
 	100% {
@@ -47,10 +41,23 @@
 }
 
 .animate-fade {
+	animation: fadeAnimation 3s ease;
+}
+
+@keyframes fadeAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
+.animate-fade-fast {
 	position: absolute;
 	left: 0;
 	width: 100%;
-	animation: fadeAnimation 10s ease;
+	animation: fadeAnimation 2s ease;
 }
 
 @keyframes fadeAnimation {
@@ -61,7 +68,7 @@
 		opacity: 0;
 	}
 	100% {
-		opacity: 100%;
+		opacity: 1;
 	}
 }
 

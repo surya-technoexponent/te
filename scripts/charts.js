@@ -204,6 +204,7 @@ const charts = {
      * @returns {boolean}
      * 
      */
+
     initializeCharts: function () {
 
         try {
@@ -255,6 +256,29 @@ const charts = {
             let nextSetKey = config.charts.nextSetKey;
 
             const target = document.getElementById(`widget-area-0${nextLocation}`);
+
+            const widgetBoxes = document.getElementsByClassName("bwa_widget_box")
+
+            if(config.widgetTransition.currrentIndex === config.widgetTransition.transitions.length - 1) {
+                config.widgetTransition.currrentIndex = 0
+            } else {
+                config.widgetTransition.currrentIndex = config.widgetTransition.currrentIndex + 1
+            }
+            console.log('trans Index', config.widgetTransition.transitions[config.widgetTransition.currrentIndex], Array.from(widgetBoxes)[animationIndex].style.background);
+            Array.from(widgetBoxes).forEach(box => {
+                box.style.background = config.widgetTransition.transitions[config.widgetTransition.currrentIndex]
+                box.style.backgroundPosition = "center"
+                box.style.backgroundRepeat = "no-repeat"
+                box.style.backgroundSize = "contain"
+            })
+            
+            target.classList.add("hide-widget")
+            setTimeout(() => {
+                target.classList.remove("hide-widget");
+                // Initiate animation
+                animations[config.animations.index](target);
+                this.incrementAnimationIndex(config.animations.index);
+            }, 1000 * 2)
             let chartObject = config.charts.symbols[currentSet][nextSetKey];
 
             // Debug
@@ -264,10 +288,6 @@ const charts = {
             api.log(`nextLocation: ${JSON.stringify(nextLocation)}`);
             api.log(`nextSetKey: ${JSON.stringify(nextSetKey)}`);
             api.log(`chartObject: ${JSON.stringify(chartObject)}`);
-
-            // Initiate animation
-            animations[config.animations.index](target)
-            this.incrementAnimationIndex(config.animations.index);
 
             // Debug
             api.log(`animations.index: ${JSON.stringify(config.animations.index)}`);

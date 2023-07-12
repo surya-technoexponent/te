@@ -28,12 +28,20 @@ const wobble = (element) => {
     element.classList.toggle("wobble")
 }
 
-const animations = [rotate, slideRight, slideLeft, fade]
+const animations = [rotate];
 
-const logoAnimation = [flip, bounce, wobble]
+const logoAnimation = [flip, bounce, wobble];
 const logoAnimationCycleTime = [6000, 4000, 4000]
 
-const logoSources = ["./assets/gif/Image20230630115755.gif", "./assets/gif/Image20230630115814.gif", "./assets/gif/Image20230630115817.gif", "./assets/gif/Image20230630115820.gif", "./assets/gif/Image20230630115823.gif", "./assets/gif/Image20230630115825.gif", "./assets/gif/Image20230630115835.gif", "./assets/gif/Image20230630115837.gif"]
+const logoSources = [
+    "./assets/gif/Image20230630115755.gif",
+    "./assets/gif/Image20230630115814.gif",
+    "./assets/gif/Image20230630115817.gif",
+    "./assets/gif/Image20230630115820.gif",
+    "./assets/gif/Image20230630115823.gif",
+    "./assets/gif/Image20230630115825.gif",
+    "./assets/gif/Image20230630115835.gif"
+]
 
 let currentLogoSourceIndex = 0
 

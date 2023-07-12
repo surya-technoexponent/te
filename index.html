@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>BWA</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +18,7 @@
 		<img src="assets/images/snarky-charts-bwa-001-sc-plane-logo.png" alt="">
 	</div>
 	<section class="section bwa_main_sec">
-		<marquee width="100%" direction="left" class="ticker_news">
+		<marquee width="100%" direction="left" class="banner">
 			<span>Rumble.com/SnarkyCharts - Market Dashboards &amp; Technical Analysis</span>
 			<span>SnarkSquad.Locals.com - Early Access, Sneak Previews, Deep Analysis</span>
 			<span>SnarkyGuy.Substack.com - Politics, Health &amp; Personal</span>
@@ -33,6 +34,7 @@
 					</h3>
 					<div class="bwa_widget_box">
 						<div style="height: 100%" class="widget" id="widget-area-01"></div>
+
 					</div>
 				</div>
 			</div>
@@ -43,6 +45,7 @@
 					</h3>
 					<div class="bwa_widget_box">
 						<div style="height: 100%" class="widget" id="widget-area-02"></div>
+
 					</div>
 				</div>
 			</div>
@@ -53,6 +56,7 @@
 					</h3>
 					<div class="bwa_widget_box">
 						<div style="height: 100%" class="widget" id="widget-area-03"></div>
+
 					</div>
 				</div>
 			</div>
@@ -63,6 +67,7 @@
 					</h3>
 					<div class="bwa_widget_box ">
 						<div style="height: 100%" class="widget" id="widget-area-04"></div>
+
 					</div>
 				</div>
 			</div>
@@ -73,6 +78,7 @@
 					</h3>
 					<div class="bwa_widget_box ">
 						<div style="height: 100%" class="widget" id="widget-area-05"></div>
+
 					</div>
 				</div>
 			</div>
@@ -83,6 +89,7 @@
 					</h3>
 					<div class="bwa_widget_box ">
 						<div style="height: 100%" class="widget" id="widget-area-06"></div>
+
 					</div>
 				</div>
 			</div>
@@ -91,7 +98,8 @@
 					<h3>
 						<marquee direction="left" width="100%" Scrollamount="4">Latest Headlines & Events</marquee>
 					</h3>
-					<div id="left-marquee" class="bwa_widget_box bwa_widget_box_bottom dark_green_bg">
+					<div id="left-marquee" class=" bwa_widget_box_bottom dark_green_bg ticker_news">
+						<div id="left-marquee-footer"></div>
 					</div>
 				</div>
 			</div>
@@ -108,9 +116,11 @@
 					<div class="bwa_box_inside_split">
 						<div class="bwa_widget_box bwa_widget_box_bottom bwa_widget_box_split">
 							<div style="height: 100%" class="widget" id="widget-area-07"></div>
+
 						</div>
 						<div class="bwa_widget_box bwa_widget_box_bottom bwa_widget_box_split">
 							<div style="height: 100%" class="widget" id="widget-area-08"></div>
+
 						</div>
 					</div>
 				</div>
@@ -121,18 +131,18 @@
 						<marquee direction="left" width="100%" Scrollamount="4">Live Chat & Techno</marquee>
 					</h3>
 					</h3>
-					<div class="bwa_widget_box bwa_widget_box_bottom spotify_bg" >
+					<div class=" bwa_widget_box_bottom spotify_bg">
 						<iframe style="border-radius:10px"
-							src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6GJXiuZRisr?theme=0"
-							width="100%" height="175" frameBorder="0" allowfullscreen=""
-							allow="autoplay; encrypted-media; loop;" loading="lazy"></iframe>
+							src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6GJXiuZRisr?theme=0" width="100%"
+							height="175" frameBorder="0" allowfullscreen="" allow="autoplay; encrypted-media; loop;"
+							loading="lazy"></iframe>
 						<div class="bwa_control_center">
 							<h4 style="margin: .8rem 0rem;">Dashboard Control Center</h4>
 							<div class="btn-group">
 								<button>Announcement</button>
-							<button>Breaking</button>
-							<button>Configuration</button>
-							<button>Playlist</button>
+								<button>Breaking</button>
+								<button>Configuration</button>
+								<button>Playlist</button>
 							</div>
 						</div>
 					</div>
@@ -141,7 +151,7 @@
 		</div>
 		<!-- TODO-->
 		<div class="rumble-logo" id="logo-rumble">
-			<img src="./assets/images/rumble.png" class="flip" width="100%" height="100%" />
+			<img src="./assets/images/rumble.png" width="100%" height="100%" />
 		</div>
 		<div class=" ticker_news_footer">
 			<div class="tradingview-widget-container">
@@ -190,11 +200,11 @@
 									"proName": "CRYPTO:PEPEUSD"
 								}
 							],
-							"showSymbolLogo": true,
-							"colorTheme": "dark",
-							"isTransparent": false,
-							"displayMode": "regular",
-							"locale": "en"
+								"showSymbolLogo": true,
+									"colorTheme": "dark",
+										"isTransparent": false,
+											"displayMode": "regular",
+												"locale": "en"
 						}
 
 					</script>
@@ -207,15 +217,15 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/tv.js"></script>
 	<!-- config.js must load before other app specific scripts -->
+	<script src="scripts/constants.js"></script>
 	<script src="scripts/config.js"></script>
 	<script src="scripts/api.js"></script>
 	<script src="scripts/animation.js"></script>
 	<script src="scripts/charts.js"></script>
-	<script src="scripts/constants.js"></script>
-	<!-- <script src="scripts/widget.js"></script> -->
 	<script src="scripts/headlines.js"></script>
 	<script src="scripts/custom.js"></script>
 	<script src="scripts/onload.js"></script>
 
 </body>
+
 </html>
